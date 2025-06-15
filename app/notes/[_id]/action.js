@@ -45,7 +45,8 @@ export async function updateNoteAction(_, formData) {
 
   return {
     status: "success",
-    message: "Note updated!",
+    message:
+      "Note updated!. Take a note, the content might updated after a couple of seconds. If you cant see any, just refresh it",
   };
 }
 
@@ -64,6 +65,7 @@ export async function deleteNoteAction(_, formData) {
 
   return {
     status: "success",
-    message: "Note deleted!",
+    message:
+      "Note deleted!. Take a note, the content might deleted after a couple of seconds. If you cant see any, just refresh it",
   };
 }

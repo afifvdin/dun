@@ -49,6 +49,7 @@ export async function createNoteAction(_, formData) {
 
   return {
     status: "success",
-    message: "Note added!",
+    message:
+      "Note added!. Take a note, the content might appear after a couple of seconds. If you cant see any, just refresh it",
   };
 }
