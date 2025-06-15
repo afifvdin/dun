@@ -76,6 +76,7 @@ export const NoteForm = ({ _id, note, actionFn }) => {
                 name="_id"
               />
               <Button
+                disabled={deletePending}
                 formAction={deleteAction}
                 onClick={() => {
                   toast.loading("Deleting note...", {
@@ -90,6 +91,7 @@ export const NoteForm = ({ _id, note, actionFn }) => {
             </>
           )}
           <Button
+            disabled={pending}
             formAction={action}
             onClick={() => {
               toast.loading(_id ? "Updating note..." : "Adding new note...", {
@@ -132,6 +134,13 @@ export const NoteForm = ({ _id, note, actionFn }) => {
               />
             </>
           )}
+          <input
+            type="text"
+            defaultValue={note ? note.cover_image : ""}
+            readOnly
+            name="former_cover_image"
+            hidden
+          />
           <input
             disabled={pending}
             onChange={handleImageChange}

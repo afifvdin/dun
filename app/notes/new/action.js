@@ -9,8 +9,9 @@ export async function createNoteAction(_, formData) {
   const content = formData.get("content");
   const contentPreview = content.slice(0, 200);
   const coverImage = formData.get("cover_image");
+  const formerCoverImage = formData.get("former_cover_image");
   const username = await getUsername();
-  let base64 = "";
+  let base64 = formerCoverImage;
 
   if (!title || !content) {
     return {
@@ -19,14 +20,10 @@ export async function createNoteAction(_, formData) {
     };
   }
 
-  if (coverImage) {
-    if (typeof coverImage === "string") {
-      base64 = coverImage;
-    } else if (coverImage.size !== 0) {
-      const arrayBuffer = await coverImage.arrayBuffer();
-      const buffer = Buffer.from(arrayBuffer);
-      base64 = `data:${coverImage.type};base64,${buffer.toString("base64")}`;
-    }
+  if (coverImage && coverImage.size !== 0) {
+    const arrayBuffer = await coverImage.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    base64 = `data:${coverImage.type};base64,${buffer.toString("base64")}`;
   }
 
   await fetch(API_URL, {
