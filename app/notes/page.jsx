@@ -24,7 +24,7 @@ export default async function Page() {
           </div>
           <NewNoteDialog />
         </div>
-        <div className="grid grid-cols-1 max-w-xs mx-auto sm:max-w-full sm:grid-cols-2 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 max-w-xs mx-auto sm:max-w-full sm:grid-cols-2 md:grid-cols-3 gap-12 pb-16">
           {notes.map((note) => {
             return (
               <NoteCard
