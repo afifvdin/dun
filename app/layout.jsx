@@ -3,8 +3,9 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
-  variable: "--font-inter-sans",
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata = {
@@ -14,11 +15,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} antialiased`}
-        suppressHydrationWarning
-      >
+    <html lang="en">
+      <body className={`${inter.variable} font-inter antialiased`}>
         <Toaster position="top-center" />
         {children}
       </body>
