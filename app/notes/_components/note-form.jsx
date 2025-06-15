@@ -146,7 +146,7 @@ export const NoteForm = ({ _id, note, actionFn }) => {
         <input
           disabled={pending}
           name="title"
-          className="outline-none text-4xl font-medium tracking-tight placeholder:text-neutral-300"
+          className="outline-none text-4xl font-semibold tracking-tighter placeholder:text-neutral-300"
           placeholder="Title"
           defaultValue={_id && note ? note.title : ""}
         />
